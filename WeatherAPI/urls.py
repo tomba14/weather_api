@@ -19,4 +19,8 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('weather.urls')),  # Incluye las URLs de la aplicación weather
+    path('', health_check),  # Ruta raíz personalizada
 ]
+
+handler404 = 'WeatherAPI.views.custom_404'
+handler500 = 'WeatherAPI.views.custom_500'

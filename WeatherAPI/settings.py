@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-cht3ao9)m!q-vucx-8t(g$fu0!)_y&0t!jp!6z^u$k2j=cey@x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['weather-api-enkh.onrender.com', 'localhost', '127.0.0.1']
 
@@ -82,6 +82,11 @@ TEMPLATES = [
         },
     },
 ]
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
+}
 
 WSGI_APPLICATION = 'WeatherAPI.wsgi.application'
 
